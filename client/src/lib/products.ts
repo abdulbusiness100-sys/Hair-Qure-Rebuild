@@ -40,7 +40,7 @@ export const products: Product[] = [
         "Strengthens hair from root to tip",
         "Reduces breakage and hair fall",
         "Nourishes scalp with essential nutrients",
-        "100% natural, halal-certified formula",
+        "100% natural, dermatologist-approved formula",
         "Safe for breastfeeding mothers",
       ],
     },
@@ -69,7 +69,7 @@ export const products: Product[] = [
       { question: "Is this safe during breastfeeding?", answer: "Yes! All our ingredients are 100% natural and safe for breastfeeding mothers. We never use harsh chemicals or synthetic fragrances." },
       { question: "How often should I use it?", answer: "For best results, use 2-3 times per week. Consistency is key to seeing visible results." },
       { question: "When will I see results?", answer: "Most customers notice reduced hair fall within 2-3 weeks and visible new growth within 6-8 weeks of consistent use." },
-      { question: "Is this halal certified?", answer: "Yes, all HairQure products are halal certified and made with 100% natural ingredients." },
+      { question: "Is this dermatologist approved?", answer: "Yes, all HairQure products are dermatologist approved and made with 100% natural ingredients." },
     ],
   },
   {

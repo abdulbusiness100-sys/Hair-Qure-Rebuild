@@ -135,7 +135,7 @@ export default function ProductDetail() {
               </div>
 
               <div className="grid grid-cols-2 gap-2 text-xs">
-                {["100% Natural", "Halal Certified", "Safe for Breastfeeding", "30-Day Guarantee"].map((badge) => (
+                {["100% Natural", "Dermatologist Approved", "Safe for Breastfeeding", "30-Day Guarantee"].map((badge) => (
                   <div key={badge} className="flex items-center gap-1.5 text-muted-foreground">
                     <Check className="h-3.5 w-3.5 text-[#2D5F3F]" />
                     {badge}

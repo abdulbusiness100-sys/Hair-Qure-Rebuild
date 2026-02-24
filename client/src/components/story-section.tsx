@@ -28,7 +28,7 @@ export function StorySection() {
               HairQure was born from a mother's love. In 2018, founder MissK's daughter experienced 
               severe hair loss after a harmful chemical treatment. What started as a desperate search 
               for natural solutions became a mission to help thousands of women — especially postpartum 
-              mothers and women of faith — reclaim their hair and their confidence.
+              mothers and women of all hair types — reclaim their hair and their confidence.
             </p>
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base italic">

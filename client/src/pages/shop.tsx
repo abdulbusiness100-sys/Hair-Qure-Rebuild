@@ -37,7 +37,7 @@ export default function Shop() {
             Our Products
           </h1>
           <p className="text-white/70 mt-3 max-w-lg mx-auto px-4">
-            Clean, natural hair care — halal certified and safe for breastfeeding mothers.
+            Clean, natural hair care — dermatologist approved and safe for breastfeeding mothers.
           </p>
         </div>
 

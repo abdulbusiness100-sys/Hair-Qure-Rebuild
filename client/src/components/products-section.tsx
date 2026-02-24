@@ -31,7 +31,7 @@ export function ProductsSection() {
             Clean, Natural Hair Care
           </h2>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-            Every product is halal certified, 100% natural, and safe for breastfeeding mothers.
+            Every product is dermatologist approved, 100% natural, and safe for breastfeeding mothers.
           </p>
         </motion.div>
 

@@ -19,9 +19,9 @@ const testimonials = [
   {
     id: 3,
     name: "Fatima R.",
-    quote: "Finally, halal hair care that actually works.",
+    quote: "Finally, natural hair care that actually works.",
     rating: 5,
-    tag: "Halal Certified",
+    tag: "All Hair Types",
   },
 ];
 

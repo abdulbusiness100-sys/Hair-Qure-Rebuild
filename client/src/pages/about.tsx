@@ -10,7 +10,7 @@ import { Heart, Leaf, Shield, Users } from "lucide-react";
 const values = [
   { icon: Heart, title: "Born from Love", description: "Every product is created with the care of a mother who's been there." },
   { icon: Leaf, title: "100% Natural", description: "Only clean, natural ingredients. No sulfates, parabens, or harsh chemicals." },
-  { icon: Shield, title: "Halal Certified", description: "All formulas are halal certified and safe for women of faith." },
+  { icon: Shield, title: "Dermatologist Approved", description: "All formulas are dermatologist approved and safe for all hair types." },
   { icon: Users, title: "Community First", description: "Built by women, for women. 3,000+ mothers transformed and counting." },
 ];
 
@@ -59,10 +59,10 @@ export default function About() {
                 <p>
                   That's when she decided to create her own. Drawing on traditional hair care wisdom and modern 
                   research into natural ingredients, MissK developed formulas that would eventually become HairQure — 
-                  products that are 100% natural, halal certified, and truly effective.
+                  products that are 100% natural, dermatologist approved, and truly effective.
                 </p>
                 <p>
-                  Today, HairQure has helped over 3,000 women — postpartum mothers, women of faith, and natural 
+                  Today, HairQure has helped over 3,000 women — postpartum mothers, women of all hair types, and natural 
                   hair enthusiasts — reclaim their hair and their confidence. Every product is still made with the 
                   same love and care that started it all.
                 </p>

@@ -30,9 +30,9 @@ const testimonials = [
     id: 3,
     name: "Fatima R.",
     location: "New York, USA",
-    quote: "Finally, halal hair care that actually works. I've tried everything and HairQure is the only thing that's made a real difference.",
+    quote: "Finally, natural hair care that actually works. I've tried everything and HairQure is the only thing that's made a real difference.",
     rating: 5,
-    concern: "Halal",
+    concern: "All Hair Types",
     product: "Complete Set",
   },
   {
@@ -86,7 +86,7 @@ export default function Results() {
             Real Results, Real Women
           </h1>
           <p className="text-white/70 mt-3 max-w-lg mx-auto px-4">
-            See how HairQure is transforming hair for postpartum mothers and women of faith.
+            See how HairQure is transforming hair for postpartum mothers and women of all hair types.
           </p>
         </div>
 

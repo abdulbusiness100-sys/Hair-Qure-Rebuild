@@ -6,7 +6,7 @@ import { Shield, Leaf, Heart, Truck } from "lucide-react";
 const trustBadges = [
   { icon: Heart, label: "3,000+ Mothers Transformed" },
   { icon: Leaf, label: "100% Natural" },
-  { icon: Shield, label: "Halal Certified" },
+  { icon: Shield, label: "Dermatologist Approved" },
   { icon: Truck, label: "Ships Worldwide" },
 ];
 
@@ -33,10 +33,10 @@ export function HeroSection() {
             className="max-w-3xl space-y-6"
           >
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight" data-testid="text-hero-heading">
-              Natural Hair Recovery for Mothers & Women of Faith
+              Natural Hair Recovery for Mothers & Women of All Hair Types
             </h1>
             <p className="text-white/80 text-base sm:text-lg max-w-xl mx-auto" data-testid="text-hero-subheading">
-              Postpartum hair loss? Thinning edges? Get your confidence back with clean, halal-certified formulas.
+              Postpartum hair loss? Thinning edges? Get your confidence back with clean, natural formulas made for every hair type.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
               <Link href="/shop">

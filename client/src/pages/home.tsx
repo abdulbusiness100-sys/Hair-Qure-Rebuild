@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "HairQure — Natural Hair Recovery for Mothers & Women of Faith";
+    document.title = "HairQure — Natural Hair Recovery for Mothers & Women of All Hair Types";
   }, []);
 
   return (
