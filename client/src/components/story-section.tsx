@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export function StorySection() {
   return (
@@ -10,27 +12,39 @@ export function StorySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="order-2 lg:order-1 space-y-6"
           >
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight" data-testid="text-story-heading">
-              Rooted in Ritual,{" "}
-              <span className="block">Perfected by Nature.</span>
-            </h2>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#D4816F] mb-2 font-semibold">
+                Our Story
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#2D5F3F]" data-testid="text-story-heading">
+                You Grew a Human.{" "}
+                <span className="block">Now Grow Your Hair Back.</span>
+              </h2>
+            </div>
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base" data-testid="text-story-description">
-              HairQure by MissK was born from a mother's love and a relentless pursuit to find 
-              a solution to a heartbreaking problem. In 2018, MissK's daughter experienced a 
-              severe reaction to a hair treatment. The stylist used a product that either had 
-              expired or contained harmful chemicals, causing her hair to fall out in large clumps, 
-              leaving her almost bald...
+              HairQure was born from a mother's love. In 2018, founder MissK's daughter experienced 
+              severe hair loss after a harmful chemical treatment. What started as a desperate search 
+              for natural solutions became a mission to help thousands of women — especially postpartum 
+              mothers and women of faith — reclaim their hair and their confidence.
             </p>
 
-            <button
-              className="text-sm uppercase tracking-[0.15em] font-medium text-foreground border-b border-foreground pb-1 hover:text-primary hover:border-primary transition-colors"
-              data-testid="button-learn-more"
-            >
-              Learn More
-            </button>
+            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base italic">
+              "I couldn't find products that were both effective and safe. So I created them."
+              <span className="block not-italic mt-1 font-semibold text-foreground text-xs">— MissK, Founder</span>
+            </p>
+
+            <Link href="/about">
+              <Button
+                variant="outline"
+                className="uppercase tracking-[0.15em] text-sm"
+                data-testid="button-learn-more"
+              >
+                Read Our Full Story
+              </Button>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -38,8 +52,9 @@ export function StorySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="order-1 lg:order-2"
           >
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none overflow-hidden">
+            <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none overflow-hidden rounded-lg">
               <img
                 src="/images/missk-daughter.jpg"
                 alt="MissK and her daughter wearing HairQure bonnets"

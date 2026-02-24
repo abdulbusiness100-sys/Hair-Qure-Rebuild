@@ -1,33 +1,43 @@
-# HairQure - Natural Hair Growth Brand Website
+# HairQure - Natural Hair Growth E-Commerce Website
 
 ## Overview
-HairQure is a premium natural hair care brand website matching the original hairqure.ae layout. Sells natural hair growth products including oils, mists, butters, and bonnets. Founded by "MissK" after her daughter experienced hair loss from harmful chemicals.
+HairQure is a high-converting, mobile-first e-commerce website for a natural hair growth brand targeting postpartum mothers, Muslim women, and the natural hair community. Founded by "MissK" after her daughter experienced hair loss from harmful chemicals.
 
 ## Current State
-- Fully functional single-page website matching original hairqure.ae layout
-- Uses real product photography from brand photoshoot
-- PostgreSQL database for subscriber/waiting list management
-- Responsive design with warm amber/golden color scheme
+- Multi-page e-commerce website with 7 routes
+- Cart system with localStorage persistence
+- Newsletter/email capture with PostgreSQL
+- Emerald green/terracotta/gold/cream color scheme
+- Real product photography from brand photoshoot
 - Built with React + Express + Drizzle ORM
 
 ## Architecture
-- **Frontend**: React with Tailwind CSS, shadcn/ui components, Framer Motion animations
+- **Frontend**: React with Tailwind CSS, shadcn/ui components, Framer Motion animations, wouter routing
 - **Backend**: Express.js with PostgreSQL (Drizzle ORM)
-- **Routing**: wouter (single page "/" route)
-- **State**: TanStack React Query for API calls
+- **Cart**: Frontend-only with React Context + localStorage (no payment processing yet)
+- **State**: TanStack React Query for API calls, CartContext for cart
 
-## Key Sections (matching original site)
-1. Announcement bar (shipping over AED 50)
-2. Navbar (centered logo, Products/Our Story links, Shop Now button)
-3. Hero (video background with Shop Now overlay)
-4. Products (6 products: Oil, Mist, Butter, Combo, Adult Bonnet, Baby Bonnet)
-5. Spotlight (Hair Growth Oil feature section)
-6. Brand Story (MissK + daughter photo, founding story)
-7. Newsletter/Waiting List (email capture with PostgreSQL persistence)
-8. Footer (Products, Company, Help & Information columns)
+## Pages & Routes
+1. `/` - Homepage: Hero video, trust badges, product grid, spotlight, testimonials, founder story, newsletter
+2. `/shop` - Shop: Product grid with filters, product bundles
+3. `/product/:id` - Product Detail: Gallery, descriptions, ingredients, how-to-use, timeline, FAQ accordion, related products
+4. `/about` - About Us: Founder story, brand values, CTA
+5. `/results` - Results: Customer testimonials with stats and ratings
+6. `/guide` - Free Hair Growth Guide: Lead magnet email capture
+7. `/cart` - Cart: Line items, quantity control, order summary, shipping threshold
+
+## Products (from client/src/lib/products.ts)
+- Hair Growth Oil ($30) - rosemary, castor oil, biotin
+- Whipped Hair Butter Cream ($20) - shea butter, coconut oil, vitamin E
+- Herbal Hair Mist ($15) - rose water, aloe vera, lavender
+- Silk Bonnet Adult ($25) - premium silk, adjustable band
+- Baby Silk Bonnet ($20) - gentle silk for infants
+
+## Bundles
+- Growth Kit: Oil + Butter ($42.50, save 15%)
+- Complete Set: Oil + Butter + Mist ($55.25, save 15%)
 
 ## Product Images (from brand zip)
-- Real product photography used throughout
 - Images stored in client/public/images/
 - Logo: logo.jpg
 - Product photos: product-oil.jpg, product-mist-oil.jpg, product-butter.jpg, etc.
@@ -35,7 +45,7 @@ HairQure is a premium natural hair care brand website matching the original hair
 - Hero video: hero-video.mp4
 
 ## API Endpoints
-- `POST /api/subscribe` - Newsletter/waiting list subscription (email, optional name)
+- `POST /api/subscribe` - Newsletter/waiting list + guide email capture
 
 ## Database
 - `subscribers` table: id, email (unique), name, subscribed_at
@@ -43,13 +53,21 @@ HairQure is a premium natural hair care brand website matching the original hair
 ## Design Tokens
 - Font sans: Plus Jakarta Sans
 - Font serif: Playfair Display
-- Primary color: Warm amber (28 85% 45%)
-- Theme: Warm natural tones suitable for hair care brand
+- Primary: Deep emerald green (#2D5F3F / HSL 150 35% 30%)
+- Secondary: Warm terracotta (#D4816F / HSL 15 50% 63%)
+- Accent: Gold (#D4AF37 / HSL 43 76% 52%)
+- Neutrals: Cream (#F5F1E8), soft beige
+- Theme: Clean, natural, modern aesthetic
+
+## Brand Voice & Messaging
+- Core message: "You grew a human. Now grow your hair back."
+- Hero: "Natural Hair Recovery for Mothers & Women of Faith"
+- Trust badges: 3,000+ Mothers Transformed, 100% Natural, Halal Certified, Ships Worldwide
+- Target: Postpartum mothers (25-40), Muslim women, natural hair enthusiasts (US, UK, Middle East)
 
 ## User Preferences
-- Follow original hairqure.ae layout closely
+- Mobile-first, conversion-optimized
 - Use actual brand product images (not generated)
-- Don't add sections not on the original site
-- Brand colors: Warm amber/golden tones
-- Target market: UAE (AED currency)
-- Products priced in AED
+- Brand colors: Emerald green, terracotta, gold
+- Clean, modern, natural aesthetic
+- Warm, empowering brand voice

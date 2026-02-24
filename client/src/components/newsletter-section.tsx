@@ -46,7 +46,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-card/50" data-testid="section-newsletter">
+    <section className="py-16 sm:py-24 bg-[#F5F1E8]" data-testid="section-newsletter">
       <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,13 +54,14 @@ export function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-3" data-testid="text-newsletter-heading">
-            Join Our Waiting List
+          <p className="text-xs uppercase tracking-[0.2em] text-[#D4816F] mb-2 font-semibold">
+            Stay Connected
+          </p>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-3 text-[#2D5F3F]" data-testid="text-newsletter-heading">
+            Join 2,000+ Women on Their Hair Growth Journey
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base mb-8" data-testid="text-newsletter-description">
-            Be the first to be notified when your{" "}
-            <br className="hidden sm:inline" />
-            favourites are available
+            Get 15% off your first order + a free hair growth guide delivered straight to your inbox.
           </p>
 
           {submitted ? (
@@ -70,10 +71,10 @@ export function NewsletterSection() {
               className="flex flex-col items-center gap-3"
               data-testid="text-newsletter-success"
             >
-              <CheckCircle className="h-10 w-10 text-green-600" />
-              <p className="text-lg font-semibold">You're on the list!</p>
+              <CheckCircle className="h-10 w-10 text-[#2D5F3F]" />
+              <p className="text-lg font-semibold text-[#2D5F3F]">You're on the list!</p>
               <p className="text-sm text-muted-foreground">
-                We'll notify you when new products are available.
+                Check your email for your 15% discount code and free guide.
               </p>
             </motion.div>
           ) : (
@@ -87,8 +88,8 @@ export function NewsletterSection() {
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="Email address"
-                          className="h-12"
+                          placeholder="Enter your email"
+                          className="h-12 bg-white border-border"
                           {...field}
                           data-testid="input-newsletter-email"
                         />
@@ -99,14 +100,14 @@ export function NewsletterSection() {
                 />
                 <Button
                   type="submit"
-                  className="h-12 uppercase tracking-[0.1em] text-sm px-8"
+                  className="h-12 uppercase tracking-[0.1em] text-sm px-8 bg-[#D4AF37] hover:bg-[#B8962F] text-black font-semibold"
                   disabled={subscribeMutation.isPending}
                   data-testid="button-subscribe"
                 >
                   {subscribeMutation.isPending ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
-                    "Sign Me Up"
+                    "Get 15% Off"
                   )}
                 </Button>
               </form>

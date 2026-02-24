@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, ShoppingBag, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { useCart } from "@/lib/cart";
 
 const navLinks = [
-  { label: "Products", href: "#products" },
-  { label: "Our Story", href: "#story" },
+  { label: "Shop", href: "/shop" },
+  { label: "About", href: "/about" },
+  { label: "Results", href: "/results" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [location] = useLocation();
+  const { itemCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -18,16 +23,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (href: string) => {
-    setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <>
-      <div className="bg-foreground text-background text-center text-xs sm:text-sm py-2 px-4 font-medium" data-testid="announcement-bar">
-        Enjoy standard shipping on all orders over AED 50.
+      <div
+        className="bg-[#2D5F3F] text-white text-center text-xs sm:text-sm py-2.5 px-4 font-medium tracking-wide"
+        data-testid="announcement-bar"
+      >
+        Free Shipping on Orders Over $50 | 100% Natural | Halal Certified
       </div>
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -48,36 +50,48 @@ export function Navbar() {
               <SheetContent side="left" className="w-72 pt-12">
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
-                    <button
+                    <Link
                       key={link.href}
-                      onClick={() => scrollTo(link.href)}
-                      className="text-left text-lg font-medium text-foreground py-2 border-b border-border/30"
-                      data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`text-left text-lg font-medium py-2 border-b border-border/30 ${
+                        location === link.href ? "text-primary" : "text-foreground"
+                      }`}
+                      data-testid={`link-mobile-${link.label.toLowerCase()}`}
                     >
                       {link.label}
-                    </button>
+                    </Link>
                   ))}
+                  <Link
+                    href="/guide"
+                    onClick={() => setOpen(false)}
+                    className="text-left text-lg font-medium py-2 border-b border-border/30 text-foreground"
+                    data-testid="link-mobile-guide"
+                  >
+                    Free Guide
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
 
             <nav className="hidden md:flex items-center gap-8" data-testid="nav-desktop">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
-                  data-testid={`link-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                  href={link.href}
+                  className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-primary ${
+                    location === link.href ? "text-primary" : "text-muted-foreground"
+                  }`}
+                  data-testid={`link-${link.label.toLowerCase()}`}
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
             </nav>
 
-            <a
-              href="#"
+            <Link
+              href="/"
               className="absolute left-1/2 -translate-x-1/2 flex items-center"
-              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
               data-testid="link-logo"
             >
               <img
@@ -86,18 +100,29 @@ export function Navbar() {
                 className="h-12 sm:h-14 w-auto"
                 data-testid="img-logo"
               />
-            </a>
+            </Link>
 
-            <div className="flex items-center gap-2">
-              <Button
-                size="sm"
-                variant="outline"
-                className="text-xs uppercase tracking-wider"
-                onClick={() => scrollTo("#products")}
-                data-testid="button-shop-now-nav"
-              >
-                Shop Now
-              </Button>
+            <div className="flex items-center gap-3">
+              <Link href="/cart" className="relative" data-testid="link-cart">
+                <ShoppingBag className="h-5 w-5 text-foreground" />
+                {itemCount > 0 && (
+                  <span
+                    className="absolute -top-2 -right-2 bg-[#D4AF37] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold"
+                    data-testid="text-cart-count"
+                  >
+                    {itemCount}
+                  </span>
+                )}
+              </Link>
+              <Link href="/shop">
+                <Button
+                  size="sm"
+                  className="text-xs uppercase tracking-wider bg-[#2D5F3F] hover:bg-[#234B31] text-white hidden sm:flex"
+                  data-testid="button-shop-now-nav"
+                >
+                  Shop Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
