@@ -25,7 +25,7 @@ export function StorySection() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base" data-testid="text-story-description">
-              HairQure was born from a mother's love. In 2018, founder MissK's daughter experienced 
+              HairQure was born from a mother's love. In 2018, founder Miss K's daughter experienced 
               severe hair loss after a harmful chemical treatment. What started as a desperate search 
               for natural solutions became a mission to help thousands of women — especially postpartum 
               mothers and women of all hair types — reclaim their hair and their confidence.
@@ -33,7 +33,7 @@ export function StorySection() {
 
             <p className="text-muted-foreground leading-relaxed text-sm sm:text-base italic">
               "I couldn't find products that were both effective and safe. So I created them."
-              <span className="block not-italic mt-1 font-semibold text-foreground text-xs">— MissK, Founder</span>
+              <span className="block not-italic mt-1 font-semibold text-foreground text-xs">— Miss K, Founder</span>
             </p>
 
             <Link href="/about">
@@ -57,7 +57,7 @@ export function StorySection() {
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none overflow-hidden rounded-lg">
               <img
                 src="/images/missk-daughter.jpg"
-                alt="MissK and her daughter wearing HairQure bonnets"
+                alt="Miss K and her daughter wearing HairQure bonnets"
                 className="w-full h-full object-cover"
                 data-testid="img-story"
               />

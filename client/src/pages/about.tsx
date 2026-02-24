@@ -47,18 +47,18 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-sm sm:text-base" data-testid="text-founder-story">
                 <p>
-                  In 2018, MissK's daughter experienced a severe reaction to a hair treatment. The stylist 
+                  In 2018, Miss K's daughter experienced a severe reaction to a hair treatment. The stylist 
                   used a product that either had expired or contained harmful chemicals, causing her hair to 
                   fall out in large clumps, leaving her almost bald.
                 </p>
                 <p>
-                  As a mother, watching her child lose her hair was devastating. MissK searched everywhere for 
+                  As a mother, watching her child lose her hair was devastating. Miss K searched everywhere for 
                   natural solutions that would be safe and effective — but found that most products on the market 
                   were either filled with chemicals or simply didn't work.
                 </p>
                 <p>
                   That's when she decided to create her own. Drawing on traditional hair care wisdom and modern 
-                  research into natural ingredients, MissK developed formulas that would eventually become HairQure — 
+                  research into natural ingredients, Miss K developed formulas that would eventually become HairQure — 
                   products that are 100% natural, dermatologist approved, and truly effective.
                 </p>
                 <p>
@@ -77,7 +77,7 @@ export default function About() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
                 <img
                   src="/images/missk-daughter.jpg"
-                  alt="MissK and her daughter"
+                  alt="Miss K and her daughter"
                   className="w-full h-full object-cover"
                   data-testid="img-founder"
                 />
@@ -134,8 +134,6 @@ export default function About() {
             </div>
           </div>
         </section>
-
-        <NewsletterSection />
       </main>
       <FooterSection />
     </div>

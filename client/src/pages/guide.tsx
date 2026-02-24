@@ -101,62 +101,22 @@ export default function Guide() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-[#F5F1E8] rounded-lg p-8"
+              className="bg-[#F5F1E8] rounded-lg p-8 flex flex-col items-center justify-center text-center"
               data-testid="guide-form-card"
             >
-              {submitted ? (
-                <div className="text-center py-8 space-y-4">
-                  <CheckCircle className="h-16 w-16 text-[#2D5F3F] mx-auto" />
-                  <h3 className="font-serif text-2xl font-bold text-[#2D5F3F]">Check Your Inbox!</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Your free guide and 15% discount code are on their way. Check your email to get started.
-                  </p>
+              <div className="space-y-6">
+                <div className="text-center">
+                  <h3 className="font-serif text-xl font-bold text-[#2D5F3F]">Guide Coming Soon</h3>
+                  <p className="text-sm text-muted-foreground mt-1">We're currently updating our hair growth guide to bring you the best tips and routines. Check back soon!</p>
                 </div>
-              ) : (
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <h3 className="font-serif text-xl font-bold text-[#2D5F3F]">Get Your Free Guide</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Enter your email below for instant access.</p>
-                  </div>
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit((data) => subscribeMutation.mutate(data))} className="space-y-4" data-testid="form-guide">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormControl>
-                              <Input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="h-12 bg-white"
-                                {...field}
-                                data-testid="input-guide-email"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <Button
-                        type="submit"
-                        className="w-full h-12 bg-[#D4AF37] hover:bg-[#B8962F] text-black uppercase tracking-wider font-semibold"
-                        disabled={subscribeMutation.isPending}
-                        data-testid="button-guide-submit"
-                      >
-                        {subscribeMutation.isPending ? (
-                          <Loader2 className="h-4 w-4 animate-spin" />
-                        ) : (
-                          "Send Me the Free Guide"
-                        )}
-                      </Button>
-                    </form>
-                  </Form>
-                  <p className="text-xs text-center text-muted-foreground">
-                    We respect your privacy. Unsubscribe anytime.
-                  </p>
-                </div>
-              )}
+                <Link href="/shop">
+                  <Button
+                    className="w-full h-12 bg-[#2D5F3F] hover:bg-[#1E412A] text-white uppercase tracking-wider font-semibold px-8"
+                  >
+                    Shop Our Products
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>

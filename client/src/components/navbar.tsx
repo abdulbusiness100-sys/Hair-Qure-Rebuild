@@ -29,7 +29,7 @@ export function Navbar() {
         className="bg-[#2D5F3F] text-white text-center text-xs sm:text-sm py-2.5 px-4 font-medium tracking-wide"
         data-testid="announcement-bar"
       >
-        Free Shipping on Orders Over $50 | 100% Natural | All Hair Types
+        Free Shipping on Orders Over $50 | 100% Natural | Dermatologist Approved
       </div>
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${

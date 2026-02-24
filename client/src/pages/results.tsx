@@ -154,8 +154,6 @@ export default function Results() {
             </Link>
           </div>
         </section>
-
-        <NewsletterSection />
       </main>
       <FooterSection />
     </div>

@@ -1,7 +1,7 @@
 # HairQure - Natural Hair Growth E-Commerce Website
 
 ## Overview
-HairQure is a high-converting, mobile-first e-commerce website for a natural hair growth brand targeting postpartum mothers, women of all hair types, and the natural hair community. Founded by "MissK" after her daughter experienced hair loss from harmful chemicals.
+HairQure is a high-converting, mobile-first e-commerce website for a natural hair growth brand targeting postpartum mothers, women of all hair types, and the natural hair community. Founded by "Miss K" after her daughter experienced hair loss from harmful chemicals.
 
 ## Current State
 - Multi-page e-commerce website with 7 routes

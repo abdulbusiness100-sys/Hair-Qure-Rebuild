@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { SiInstagram, SiTiktok, SiFacebook, SiPinterest } from "react-icons/si";
+import { SiInstagram, SiTiktok } from "react-icons/si";
 
 export function FooterSection() {
   return (
@@ -26,7 +26,6 @@ export function FooterSection() {
             <ul className="space-y-3 text-sm text-white/70">
               <li><Link href="/about" className="hover:text-white transition-colors" data-testid="link-footer-about">About Us</Link></li>
               <li><Link href="/results" className="hover:text-white transition-colors" data-testid="link-footer-results">Results</Link></li>
-              <li><Link href="/guide" className="hover:text-white transition-colors" data-testid="link-footer-guide">Free Guide</Link></li>
               <li><a href="mailto:info@hairqure.ae" className="hover:text-white transition-colors" data-testid="link-footer-contact">Contact Us</a></li>
             </ul>
           </div>
@@ -48,10 +47,8 @@ export function FooterSection() {
               Connect
             </h4>
             <div className="flex gap-4 mb-4">
-              <a href="#" className="text-white/70 hover:text-[#D4AF37] transition-colors" data-testid="link-social-instagram"><SiInstagram className="h-5 w-5" /></a>
-              <a href="#" className="text-white/70 hover:text-[#D4AF37] transition-colors" data-testid="link-social-tiktok"><SiTiktok className="h-5 w-5" /></a>
-              <a href="#" className="text-white/70 hover:text-[#D4AF37] transition-colors" data-testid="link-social-facebook"><SiFacebook className="h-5 w-5" /></a>
-              <a href="#" className="text-white/70 hover:text-[#D4AF37] transition-colors" data-testid="link-social-pinterest"><SiPinterest className="h-5 w-5" /></a>
+              <a href="https://www.instagram.com/hairqureoil/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#D4AF37] transition-colors" data-testid="link-social-instagram"><SiInstagram className="h-5 w-5" /></a>
+              <a href="https://www.tiktok.com/@hairqure" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#D4AF37] transition-colors" data-testid="link-social-tiktok"><SiTiktok className="h-5 w-5" /></a>
             </div>
             <p className="text-xs text-white/50">
               #HairQureJourney
