@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const navLinks = [
   { label: "Products", href: "#products" },
-  { label: "Results", href: "#results" },
   { label: "Our Story", href: "#story" },
-  { label: "Ingredients", href: "#ingredients" },
-  { label: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {
@@ -28,57 +25,27 @@ export function Navbar() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
-          : "bg-transparent"
-      }`}
-      data-testid="navbar"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4 h-16 sm:h-20">
-          <a
-            href="#"
-            className="flex items-center gap-2"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-            data-testid="link-logo"
-          >
-            <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight">
-              Hair<span className="text-primary">Qure</span>
-            </span>
-          </a>
-
-          <nav className="hidden md:flex items-center gap-8" data-testid="nav-desktop">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                data-testid={`link-${link.label.toLowerCase().replace(/\s/g, "-")}`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <Button
-              size="sm"
-              className="hidden sm:inline-flex"
-              onClick={() => scrollTo("#products")}
-              data-testid="button-shop-now-nav"
-            >
-              Shop Now
-            </Button>
-
+    <>
+      <div className="bg-foreground text-background text-center text-xs sm:text-sm py-2 px-4 font-medium" data-testid="announcement-bar">
+        Enjoy standard shipping on all orders over AED 50.
+      </div>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
+            : "bg-background border-b border-border/20"
+        }`}
+        data-testid="navbar"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4 h-16 sm:h-20">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button size="icon" variant="ghost" className="md:hidden" data-testid="button-mobile-menu">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-72 pt-12">
+              <SheetContent side="left" className="w-72 pt-12">
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <button
@@ -90,19 +57,51 @@ export function Navbar() {
                       {link.label}
                     </button>
                   ))}
-                  <Button
-                    className="mt-4 w-full"
-                    onClick={() => scrollTo("#products")}
-                    data-testid="button-mobile-shop"
-                  >
-                    Shop Now
-                  </Button>
                 </nav>
               </SheetContent>
             </Sheet>
+
+            <nav className="hidden md:flex items-center gap-8" data-testid="nav-desktop">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+                  data-testid={`link-${link.label.toLowerCase().replace(/\s/g, "-")}`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </nav>
+
+            <a
+              href="#"
+              className="absolute left-1/2 -translate-x-1/2 flex items-center"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              data-testid="link-logo"
+            >
+              <img
+                src="/images/logo.jpg"
+                alt="Hair Qure"
+                className="h-12 sm:h-14 w-auto"
+                data-testid="img-logo"
+              />
+            </a>
+
+            <div className="flex items-center gap-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-xs uppercase tracking-wider"
+                onClick={() => scrollTo("#products")}
+                data-testid="button-shop-now-nav"
+              >
+                Shop Now
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
