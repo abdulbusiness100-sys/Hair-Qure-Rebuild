@@ -56,6 +56,54 @@ const testimonials = [
     concern: "Hijab Hair",
     product: "Herbal Hair Mist",
   },
+  {
+    id: 7,
+    name: "Mariam A.",
+    quote: "I was skeptical at first, but the results speak for themselves. My hair feels so much thicker and the shedding has decreased significantly.",
+    rating: 5,
+    concern: "Volume",
+    product: "Hair Growth Oil",
+  },
+  {
+    id: 8,
+    name: "Amira J.",
+    quote: "The silk bonnet is so comfortable and actually stays on all night! My hair is much less frizzy in the mornings.",
+    rating: 5,
+    concern: "Maintenance",
+    product: "Silk Bonnet",
+  },
+  {
+    id: 9,
+    name: "Khadija B.",
+    quote: "I love that these products are all-natural. I feel safe using them while breastfeeding and my hair has never looked better.",
+    rating: 5,
+    concern: "Safety",
+    product: "Growth Kit",
+  },
+  {
+    id: 10,
+    name: "Sana T.",
+    quote: "The difference in my daughter's hair is amazing. It's so much more manageable and growing so fast now.",
+    rating: 5,
+    concern: "Kids Hair Care",
+    product: "Baby Silk Bonnet",
+  },
+  {
+    id: 11,
+    name: "Zainab F.",
+    quote: "Finally found a routine that works for my 4C hair. The butter keeps my moisture locked in for days.",
+    rating: 5,
+    concern: "Moisture",
+    product: "Whipped Hair Butter",
+  },
+  {
+    id: 12,
+    name: "Hala D.",
+    quote: "Amazing products! My edges started filling in after just 3 weeks of consistent use with the oil.",
+    rating: 5,
+    concern: "Edges",
+    product: "Hair Growth Oil",
+  }
 ];
 
 const videoTestimonials = [

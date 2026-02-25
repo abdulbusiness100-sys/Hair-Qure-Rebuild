@@ -25,6 +25,27 @@ const testimonials = [
     rating: 5,
     tag: "All Hair Types",
   },
+  {
+    id: 4,
+    name: "Layla M.",
+    quote: "I started using HairQure after my second baby. Within 8 weeks, the hair fall stopped completely and I can see new growth along my hairline.",
+    rating: 5,
+    tag: "Postpartum Recovery",
+  },
+  {
+    id: 5,
+    name: "Zainab F.",
+    quote: "Finally found a routine that works for my 4C hair. The butter keeps my moisture locked in for days.",
+    rating: 5,
+    tag: "Moisture Retention",
+  },
+  {
+    id: 6,
+    name: "Hala D.",
+    quote: "Amazing products! My edges started filling in after just 3 weeks of consistent use with the oil.",
+    rating: 5,
+    tag: "Edge Restoration",
+  }
 ];
 
 export function TestimonialsSection() {
@@ -45,7 +66,7 @@ export function TestimonialsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.id}
