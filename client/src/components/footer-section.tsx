@@ -63,9 +63,6 @@ export function FooterSection() {
           <p className="text-xs text-white/50" data-testid="text-footer-copyright">
             &copy; {new Date().getFullYear()} HairQure. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-white/50">
-            <span data-testid="text-footer-guarantee">30-Day Money-Back Guarantee</span>
-          </div>
         </div>
       </div>
     </footer>

@@ -116,7 +116,7 @@ const stats = [
   { value: "3,000+", label: "Mothers Transformed" },
   { value: "92%", label: "Saw Results in 8 Weeks" },
   { value: "4.9/5", label: "Average Rating" },
-  { value: "30-Day", label: "Money-Back Guarantee" },
+  { value: "100%", label: "Natural Ingredients" },
 ];
 
 export default function Results() {
