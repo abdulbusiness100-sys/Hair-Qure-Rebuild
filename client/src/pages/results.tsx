@@ -10,50 +10,50 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const testimonials = [
   {
     id: 1,
-    name: "Client Feedback",
-    image: "/images/testimonials/IMG_7596.PNG",
+    name: "Sarah M.",
+    quote: "8 weeks after having my baby, my hair was falling out in clumps. After 6 weeks using HairQure oil, I have baby hairs everywhere!",
     rating: 5,
-    concern: "Growth",
+    concern: "Postpartum Recovery",
     product: "Hair Growth Oil",
   },
   {
     id: 2,
-    name: "Client Feedback",
-    image: "/images/testimonials/IMG_7701.PNG",
+    name: "Aisha K.",
+    quote: "My edges are BACK. I thought they were gone forever. The oil and butter combination is incredible.",
     rating: 5,
-    concern: "Thickness",
+    concern: "Edge Restoration",
     product: "Growth Kit",
   },
   {
     id: 3,
-    name: "Client Feedback",
-    image: "/images/testimonials/IMG_9870.PNG",
+    name: "Fatima R.",
+    quote: "Finally, natural hair care that actually works. I've tried everything and HairQure is the only thing that's made a real difference.",
     rating: 5,
-    concern: "Edges",
+    concern: "All Hair Types",
     product: "Complete Set",
   },
   {
     id: 4,
-    name: "Client Feedback",
-    image: "/images/testimonials/IMG_9869.PNG",
+    name: "Nadia S.",
+    quote: "The whipped butter is a game changer. My curls have never been more defined and moisturized. I use it every wash day.",
     rating: 5,
-    concern: "Recovery",
-    product: "Hair Growth Oil",
+    concern: "Thickness",
+    product: "Whipped Hair Butter",
   },
   {
     id: 5,
-    name: "Client Feedback",
-    image: "/images/testimonials/IMG_7470.PNG",
+    name: "Layla M.",
+    quote: "I started using HairQure after my second baby. Within 8 weeks, the hair fall stopped completely and I can see new growth along my hairline.",
     rating: 5,
-    concern: "Postpartum",
+    concern: "Postpartum Recovery",
     product: "Hair Growth Oil",
   },
   {
     id: 6,
-    name: "Client Feedback",
-    image: "/images/testimonials/IMG_7597.PNG",
+    name: "Zahra H.",
+    quote: "The herbal mist is perfect for refreshing my hair under hijab. Light, hydrating, and smells amazing. No buildup at all.",
     rating: 5,
-    concern: "Hydration",
+    concern: "Hijab Hair",
     product: "Herbal Hair Mist",
   },
 ];
@@ -127,8 +127,8 @@ export default function Results() {
 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#D4816F] font-semibold mb-2">Client Results</p>
-            <h2 className="font-serif text-3xl font-bold text-[#2D5F3F]">Success Gallery</h2>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#D4816F] font-semibold mb-2">Community Stories</p>
+            <h2 className="font-serif text-3xl font-bold text-[#2D5F3F]">What Our Customers Say</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -139,41 +139,32 @@ export default function Results() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                onClick={() => setSelectedImage(t.image)}
+                className="bg-white rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
                 data-testid={`card-testimonial-${t.id}`}
               >
-                <div className="aspect-[4/5] bg-gray-50 flex items-center justify-center overflow-hidden">
-                   <img src={t.image} alt={t.name} className="w-full h-full object-contain" />
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} className="h-4 w-4 fill-[#D4AF37] text-[#D4AF37]" />
+                  ))}
                 </div>
-                <div className="p-4 border-t border-border bg-white">
-                  <div className="flex gap-1 mb-2">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="h-3 w-3 fill-[#D4AF37] text-[#D4AF37]" />
-                    ))}
+                <p className="text-sm text-foreground leading-relaxed mb-4 italic font-sans">"{t.quote}"</p>
+                <div className="flex items-center justify-between text-xs">
+                  <div>
+                    <p className="font-semibold">— {t.name}</p>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs bg-[#2D5F3F]/10 text-[#2D5F3F] px-2 py-1 rounded font-medium">{t.concern}</span>
-                    <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t.product}</p>
+                  <div className="text-right">
+                    <span className="bg-[#2D5F3F]/10 text-[#2D5F3F] px-2 py-1 rounded text-xs">{t.concern}</span>
                   </div>
                 </div>
+                <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-border">
+                  Used: {t.product}
+                </p>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Image Modal */}
-        {selectedImage && (
-          <div 
-            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <button className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full">
-              <X className="h-6 w-6" />
-            </button>
-            <img src={selectedImage} className="max-w-full max-h-full object-contain shadow-2xl" alt="Full size result" />
-          </div>
-        )}
+        {/* Image Modal removed as we're not using screenshots anymore */}
 
         <section className="py-16 text-center bg-[#2D5F3F] text-white">
           <div className="max-w-2xl mx-auto px-4">

@@ -10,23 +10,20 @@ const testimonials = [
     quote: "8 weeks after having my baby, my hair was falling out in clumps. After 6 weeks using HairQure oil, I have baby hairs everywhere!",
     rating: 5,
     tag: "Postpartum Recovery",
-    image: "/images/testimonials/IMG_7596.PNG"
   },
   {
     id: 2,
     name: "Aisha K.",
-    quote: "My edges are BACK. I thought they were gone forever.",
+    quote: "My edges are BACK. I thought they were gone forever. The oil and butter combination is incredible.",
     rating: 5,
     tag: "Edge Restoration",
-    image: "/images/testimonials/IMG_7701.PNG"
   },
   {
     id: 3,
     name: "Fatima R.",
-    quote: "Finally, natural hair care that actually works.",
+    quote: "Finally, natural hair care that actually works. I've tried everything and HairQure is the only thing that's made a real difference.",
     rating: 5,
     tag: "All Hair Types",
-    image: "/images/testimonials/IMG_9870.PNG"
   },
 ];
 
@@ -56,23 +53,18 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-lg overflow-hidden flex flex-col group"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 sm:p-8 flex flex-col"
               data-testid={`card-testimonial-${t.id}`}
             >
-              <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                <img src={t.image} alt={t.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="h-4 w-4 fill-[#D4AF37] text-[#D4AF37]" />
+                ))}
               </div>
-              <div className="p-6 bg-white text-black flex-grow">
-                <div className="flex gap-1 mb-3">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="h-3 w-3 fill-[#D4AF37] text-[#D4AF37]" />
-                  ))}
-                </div>
-                <p className="text-sm leading-relaxed mb-4 italic text-muted-foreground">"{t.quote}"</p>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <p className="font-semibold text-xs text-[#2D5F3F] uppercase tracking-wider">— {t.name}</p>
-                  <span className="text-[10px] bg-[#D4816F]/10 text-[#D4816F] px-2 py-1 rounded font-bold uppercase">{t.tag}</span>
-                </div>
+              <p className="text-white/90 leading-relaxed mb-6 italic font-sans text-sm sm:text-base">"{t.quote}"</p>
+              <div className="flex items-center justify-between mt-auto">
+                <p className="font-semibold text-sm">— {t.name}</p>
+                <span className="text-[10px] bg-white/20 px-2 py-1 rounded uppercase tracking-wider">{t.tag}</span>
               </div>
             </motion.div>
           ))}
