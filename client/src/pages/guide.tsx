@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/footer-section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { Link } from "wouter";
 import { CheckCircle, Loader2, Check, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { useMutation } from "@tanstack/react-query";

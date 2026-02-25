@@ -1,7 +1,7 @@
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Star, Play } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
